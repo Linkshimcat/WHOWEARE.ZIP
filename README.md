@@ -1,6 +1,11 @@
 # 후위얼.zip 프로젝트 계획서
 
-!ChatGPT Image 2026년 6월 11일 오후 06_38_21.png
+# Who We are ZIP <hr>
+| 이름 | 역할(Role) | 담당 기능 및 작업 내용 | GitHub 프로필 |
+| :---: | :---: | :--- | :---: |
+| 팀원: 김규리 | 팀장/개발/기획  | •  | [@gy-urii](https://github.com/gy-urii) |
+| 팀원: 이윤재 | 개발/디자인 | •  | [@Linkshimcat](https://github.com/Linkshimcat) |
+| 팀원: 한병민 | 개발 | •  | [@s2635-qwer](https://github.com/s2635-qwer) |
 
 ## 1. 프로젝트명
 
