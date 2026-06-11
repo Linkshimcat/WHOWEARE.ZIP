@@ -5,9 +5,9 @@
 
 | 이름 | 역할(Role) | 담당 기능 및 작업 내용 | GitHub 프로필 |
 | :---: | :---: | :--- | :---: |
-| 김규리 | 개발/기획 | • | <img width="40" src="https://github.com/user-attachments/assets/c5e5b30d-57b5-44e9-a6e5-6e314081e8cc"/> [@gy-urii](https://github.com/gy-urii) |
-| 이윤재 | 개발/디자인 | • | <img width="40" src="https://github.com/user-attachments/assets/970ee8b2-ef00-4adb-a15a-407b20a2e92d"/> [@Linkshimcat](https://github.com/Linkshimcat) |
-| 한병민 | 개발 | • | <img width="40" src="https://github.com/user-attachments/assets/48f84a02-6569-42ca-b2cb-28a4aa3f4b23"/> [@s2635-qwer](https://github.com/s2635-qwer) |
+| 김규리 | 개발/기획 | • 노션 기획서 작성, 웹 개발, 검토| <img width="40" src="https://github.com/user-attachments/assets/c5e5b30d-57b5-44e9-a6e5-6e314081e8cc"/> [@gy-urii](https://github.com/gy-urii) |
+| 이윤재 | 개발/디자인 | • GITHUB 관리, Figma디자인, 웹 개발 | <img width="40" src="https://github.com/user-attachments/assets/970ee8b2-ef00-4adb-a15a-407b20a2e92d"/> [@Linkshimcat](https://github.com/Linkshimcat) |
+| 한병민 | 개발/기획 | • PPT 만들기, 아디이어+, 웹 개발| <img width="40" src="https://github.com/user-attachments/assets/48f84a02-6569-42ca-b2cb-28a4aa3f4b23"/> [@s2635-qwer](https://github.com/s2635-qwer) |
 
 ## 1. 프로젝트명
 
