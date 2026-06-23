@@ -1,6 +1,4 @@
 # 후위얼.zip 프로젝트 계획서
-
-# Who We are ZIP
 <img width="1440" height="4400" alt="WHOWEARE_Frame" src="https://github.com/user-attachments/assets/175f6031-8a82-49fa-8a53-ff89fd7e438f" />
 
 <hr>
@@ -59,7 +57,7 @@
 - HTML
 - CSS
 - JavaScript
-- Pigma
+- Figma
 
 ## 6. 기대 효과
 
@@ -94,3 +92,5 @@
 - 팀원 목록 확인
 - 팀원 추가 버튼 제공
 - 애니메이션 효과
+
+- ## 최종: 2026년 6월 23일 (화) 오후 8시
