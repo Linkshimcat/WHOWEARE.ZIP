@@ -60,6 +60,8 @@
     </div>
   </section>
 
+  
+
   <!-- ===== ARCHIVE CARDS ===== -->
   <section class="section section-dark-bg" id="archiveSection">
     <div class="section-header">
@@ -69,6 +71,34 @@
       <div class="fan-container" id="archiveFan"></div>
     </div>
   </section>
+
+
+  <section class="section section-alt" id="addSection">
+      <div class="section-header">
+        <h2 class="section-title"># 이제 당신도 시작. &#128077;</h2>
+        <p class="section-sub">왼쪽에 비어있는 카드를 눌러 새로 시작하세요.</p>
+      </div>
+      <div class="fan-stage">
+        <div class="fan-container" id="addFan"></div>
+      </div>
+    </section> <section class="section section-dark-bg" id="archiveSection">
+      <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <div>
+          <h2 class="section-title"># Archive Cards 🗄️</h2>
+          <p class="section-sub">보관된 카드 목록입니다. 전체 데이터를 파일로 백업하거나 복구할 수 있습니다.</p>
+        </div>
+        <div class="backup-actions" style="display: flex; gap: 10px; align-items: center;">
+          <button id="btnExport" class="btn-zip" style="background: var(--green); color: #000; font-size: 12px; padding: 8px 16px;">📥 파일로 백업 (Export)</button>
+          <label class="file-label" style="height: auto; padding: 8px 16px; margin: 0; font-size: 12px; background: var(--black); color: #fff; border: none; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px;">
+            📤 파일로 복구 (Import)
+            <input type="file" id="btnImport" accept=".json" style="display: none;" />
+          </label>
+        </div>
+      </div>
+      <div class="fan-stage">
+        <div class="fan-container" id="archiveFan"></div>
+      </div>
+    </section>
 
   <!-- ===== 푸터 ===== -->
   <footer class="footer" id="about">

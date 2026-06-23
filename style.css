@@ -670,3 +670,25 @@ a { text-decoration: none; color: inherit; }
   .form-row { flex-direction: column; }
   .navbar { padding: 0 20px; }
 }
+
+
+/* ===== 보관함 전용 복원 버튼 스타일 ===== */
+.card-restore {
+  position: absolute;
+  top: 7px; right: 34px; /* 삭제 버튼(X) 왼쪽에 이쁘게 배치 */
+  background: rgba(59, 204, 110, 0.9);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 22px; height: 22px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 5;
+}
+.card:hover .card-restore { opacity: 1; }
