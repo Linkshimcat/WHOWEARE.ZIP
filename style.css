@@ -1,0 +1,671 @@
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== 변수 ===== */
+:root {
+  --black:       #111111;
+  --card-bg:     #181818;
+  --green:       #3bcc6e;
+  --green-dark:  #2da058;
+  --white:       #f5f5f5;
+  --gray-1:      #e0e0e0;
+  --gray-2:      #999999;
+  --gray-3:      #444444;
+  --bg-light:    #f0efea;
+  --bg-alt:      #f7f7f5;
+  --bg-dark:     #ececea;
+  --nav-h:       60px;
+  --card-w:      190px;
+  --card-r:      16px;
+  --font-pixel:  'Press Start 2P', monospace;
+  --font-main:   'Noto Sans KR', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ===== 네비게이션 ===== */
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(30px);
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 900;
+}
+
+.nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+
+.logo-badge {
+  background: var(--black);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.logo-text { font-size: 15px; font-weight: 700; }
+
+.nav-links { display: flex; align-items: center; gap: 10px; }
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 20px;
+  transition: background 0.18s;
+}
+
+.nav-link:hover { background: #f0f0f0; }
+
+.nav-btn {
+  background: var(--black);
+  color: #fff !important;
+}
+
+.nav-btn:hover { background: #333 !important; }
+
+/* ===== 히어로 ===== */
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-left: 60px;
+  padding-right: 40px;
+  background: var(--bg-light);
+}
+
+.hero-content { flex: 0 0 360px; }
+
+.hero-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(16px, 2.5vw, 32px);
+  line-height: 1.5;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.accent { /* keep same color, pixel font is the accent */ }
+
+.hero-sub {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.underline-green {
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-underline-offset: 4px;
+}
+
+.btn-zip {
+  background: var(--black);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-zip:hover { background: #333; transform: translateY(-2px); }
+
+/* 히어로 카드 팬 */
+.hero-cards-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 40px 20px;
+}
+
+.hero-fan {
+  position: relative;
+  width: 320px;
+  height: 300px;
+}
+
+/* ===== 섹션 ===== */
+.section {
+  padding: 80px 40px 100px;
+  background: var(--bg-light);
+}
+
+.section-alt  { background: var(--bg-alt); }
+.section-dark-bg { background: var(--bg-dark); }
+
+.section-header { margin-bottom: 16px; }
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+.section-sub { font-size: 13px; color: var(--gray-2); }
+
+/* ===== 팬 스테이지 ===== */
+.fan-stage {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  overflow: visible;
+}
+
+.fan-container {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ===== 카드 ===== */
+.card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: var(--card-w);
+  margin-left: calc(var(--card-w) / -2);
+  min-height: 310px;
+  background: var(--card-bg);
+  color: var(--white);
+  border-radius: var(--card-r);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  transform-origin: bottom center;
+  transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s, z-index 0s;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 카드 추가 버튼 */
+.card-add {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1c1c1c;
+  border: 2px dashed var(--gray-3);
+  transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), border-color 0.2s, box-shadow 0.25s;
+  min-height: 310px;
+}
+
+.card-add:hover { border-color: var(--green); }
+
+.card-add-icon {
+  width: 46px; height: 46px;
+  border: 2px solid var(--gray-3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--gray-3);
+  transition: all 0.2s;
+}
+
+.card-add:hover .card-add-icon { border-color: var(--green); color: var(--green); }
+
+.card-add-label {
+  font-size: 11px;
+  color: var(--gray-3);
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 16px;
+  transition: color 0.2s;
+}
+
+.card-add:hover .card-add-label { color: var(--gray-2); }
+
+/* 카드 이미지 */
+.card-img-area {
+  width: 100%;
+  height: 150px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #2a2a2a;
+  position: relative;
+}
+
+.card-img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-img-empty {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+/* 카드 내용 */
+.card-body { padding: 10px 12px 6px; flex: 1; }
+
+.card-line {
+  font-size: 9.5px;
+  color: var(--gray-1);
+  margin-bottom: 4px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.card-line .lbl { color: var(--gray-2); font-size: 9px; }
+
+/* 스킬 바 */
+.card-skills { margin-top: 7px; }
+
+.skill-item { margin-bottom: 5px; }
+
+.skill-name { font-size: 8.5px; color: var(--gray-2); margin-bottom: 2px; }
+
+.skill-bar-bg {
+  background: #333;
+  border-radius: 99px;
+  height: 5px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+/* 플레이리스트 버튼 */
+.card-music {
+  background: var(--green);
+  color: #000;
+  border: none;
+  padding: 8px 10px;
+  font-size: 9.5px;
+  font-weight: 700;
+  font-family: var(--font-main);
+  cursor: pointer;
+  margin: 0 10px 10px;
+  border-radius: 7px;
+  width: calc(100% - 20px);
+  text-align: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.card-music:hover { background: var(--green-dark); }
+
+/* 삭제 버튼 */
+.card-delete {
+  position: absolute;
+  top: 7px; right: 7px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 22px; height: 22px;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 5;
+}
+
+.card:hover .card-delete { opacity: 1; }
+
+/* ===== 히어로 미니 카드 ===== */
+.mini-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 140px;
+  margin-left: -70px;
+  height: 210px;
+  background: var(--card-bg);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  transform-origin: bottom center;
+  pointer-events: none;
+}
+
+.mini-card .card-img-area { height: 100px; }
+.mini-card .card-body { padding: 8px; }
+.mini-card .card-line { font-size: 8px; margin-bottom: 3px; }
+
+/* ===== 모달 ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  width: min(920px, 95vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+  transform: translateY(18px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(.22,.68,0,1.1);
+}
+
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.modal-close:hover { background: #ddd; }
+
+.modal-inner {
+  display: flex;
+  gap: 28px;
+  padding: 32px;
+}
+
+.modal-form-col { flex: 1; min-width: 0; }
+
+.modal-preview-col {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 36px;
+  gap: 8px;
+}
+
+.preview-label { font-size: 11px; color: var(--gray-2); font-weight: 600; }
+
+.modal-heading {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--black);
+}
+
+/* ===== 폼 ===== */
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.form-group.grow { flex: 2; }
+.form-group.full { flex: 1 1 100%; }
+.form-row .form-group { margin-bottom: 0; }
+
+.form-group label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"] {
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  padding: 8px 11px;
+  font-size: 12.5px;
+  font-family: var(--font-main);
+  outline: none;
+  background: #fafafa;
+  color: var(--black);
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-group input:focus { border-color: var(--green); background: #fff; }
+
+.req { color: #e74c3c; margin-left: 2px; }
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  color: #444;
+  height: 36px;
+}
+
+.file-label:hover { background: #e8e8e8; }
+
+.file-label input { display: none; }
+
+/* 스킬 입력 행 */
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+
+.skill-select {
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  padding: 6px 7px;
+  font-size: 11.5px;
+  font-family: var(--font-main);
+  background: #fafafa;
+  color: var(--black);
+  cursor: pointer;
+  flex: 0 0 100px;
+  outline: none;
+}
+
+.skill-select:focus { border-color: var(--green); }
+
+.skill-range {
+  flex: 1;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.skill-pct-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--black);
+  min-width: 30px;
+  text-align: right;
+}
+
+.btn-remove-skill {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.btn-remove-skill:hover { color: #e74c3c; }
+
+.btn-add-skill {
+  background: none;
+  border: 1.5px dashed #ccc;
+  border-radius: 7px;
+  color: var(--gray-2);
+  font-size: 11.5px;
+  font-family: var(--font-main);
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  margin-top: 4px;
+  display: block;
+}
+
+.btn-add-skill:hover { border-color: var(--green); color: var(--green); }
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-register {
+  background: var(--black);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 26px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-register:hover { background: #333; }
+
+.btn-cancel-modal {
+  background: #f0f0f0;
+  color: #444;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancel-modal:hover { background: #e0e0e0; }
+
+/* ===== 미리보기 카드 ===== */
+.preview-card {
+  width: 190px;
+  min-height: 300px;
+  position: relative !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin-left: 0 !important;
+  transform: none !important;
+  cursor: default !important;
+  animation: none !important;
+}
+
+.preview-card .card-img-area { height: 130px; }
+
+/* ===== 푸터 ===== */
+.footer {
+  background: var(--black);
+  color: var(--gray-1);
+  display: flex;
+  gap: 64px;
+  padding: 48px 60px;
+}
+
+.footer-col { display: flex; flex-direction: column; gap: 7px; }
+
+.footer-heading {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.footer-col p { font-size: 12px; color: var(--gray-2); }
+
+.footer-link {
+  font-size: 12px;
+  color: var(--gray-2);
+  display: block;
+  transition: color 0.2s;
+}
+
+.footer-link:hover { color: var(--green); }
+
+/* ===== 애니메이션 ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform-origin: bottom center; }
+  to   { opacity: 1; }
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+  .hero { flex-direction: column; padding: 90px 24px 40px; }
+  .hero-content { flex: none; }
+  .section { padding: 56px 24px 80px; }
+  .modal-inner { flex-direction: column; }
+  .modal-preview-col { display: none; }
+  .footer { flex-direction: column; gap: 28px; padding: 40px 24px; }
+  .form-row { flex-direction: column; }
+  .navbar { padding: 0 20px; }
+}

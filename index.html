@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>후위얼.Zip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== 네비게이션 ===== -->
+  <nav class="navbar">
+    <a href="#home" class="nav-logo">
+      <span class="logo-badge">WWW</span>
+      <span class="logo-text">후위얼.Zip</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://github.com/Linkshimcat/WHOWEARE.ZIP" target="_blank" class="nav-link">GitHub</a>
+      <a href="#about" class="nav-link nav-btn">소개</a>
+    </div>
+  </nav>
+
+  <!-- ===== 히어로 ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">WHO WE ARE <span class="accent">+Zip</span></h1>
+      <p class="hero-sub">우리를 압축 해제해서 <span class="underline-green">소개하세요!</span></p>
+      <button class="btn-zip" onclick="document.getElementById('teamSection').scrollIntoView({behavior:'smooth'})">
+        &#128193; zip
+      </button>
+    </div>
+    <div class="hero-cards-box">
+      <div class="hero-fan" id="heroFan"></div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM CARDS ===== -->
+  <section class="section" id="teamSection">
+    <div class="section-header">
+      <h2 class="section-title"># TEAM CARDS &#127850;</h2>
+      <p class="section-sub">카드를 추가하여 인터랙션 효과를 느껴보세요.</p>
+    </div>
+    <div class="fan-stage">
+      <div class="fan-container" id="teamFan"></div>
+    </div>
+  </section>
+
+  <!-- ===== 이제 당신도 시작 ===== -->
+  <section class="section section-alt" id="addSection">
+    <div class="section-header">
+      <h2 class="section-title"># 이제 당신도 시작. &#128077;</h2>
+      <p class="section-sub">왼쪽에 비어있는 카드를 눌러 새로 시작하세요.</p>
+    </div>
+    <div class="fan-stage">
+      <div class="fan-container" id="addFan"></div>
+    </div>
+  </section>
+
+  <!-- ===== ARCHIVE CARDS ===== -->
+  <section class="section section-dark-bg" id="archiveSection">
+    <div class="section-header">
+      <h2 class="section-title"># Archive Cards</h2>
+    </div>
+    <div class="fan-stage">
+      <div class="fan-container" id="archiveFan"></div>
+    </div>
+  </section>
+
+  <!-- ===== 푸터 ===== -->
+  <footer class="footer" id="about">
+    <div class="footer-col">
+      <h4 class="footer-heading">WHO WE ARE .ZIP</h4>
+      <p>1211 이윤재 (개발, 디자인)</p>
+      <p>1217 한병민 (PPT, 개발)</p>
+      <p>1204 김규리 (기획, 개발, 발표)</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-heading">HTML 방과후 프로젝트</h4>
+      <p>HTML</p>
+      <p>CSS</p>
+      <p>JavaScript</p>
+      <p>Figma · Design</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-heading">GitHub</h4>
+      <a href="https://github.com/Linkshimcat">&#128279; Linkshimcat (이윤재)</a>
+      <a href="https://github.com/gy-urii">&#128279; gy-urii (김규리)</a>
+      <a href="https://github.com/s2635-qwer">&#128279; s2635-qwer (한병민)</a>
+    </div>
+  </footer>
+
+  <!-- ===== 카드 생성 모달 ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalCloseBtn">&#10005;</button>
+      <div class="modal-inner">
+
+        <!-- 폼 -->
+        <div class="modal-form-col">
+          <h3 class="modal-heading">카드 만들기</h3>
+          <form id="cardForm" autocomplete="off">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>이름 <span class="req">*</span></label>
+                <input type="text" id="f-name" placeholder="이름을 입력하세요" required />
+              </div>
+              <div class="form-group">
+                <label>닉네임</label>
+                <input type="text" id="f-nick" placeholder="닉네임을 입력하세요" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group grow">
+                <label>프로필 이미지 URL</label>
+                <input type="url" id="f-img" placeholder="이미지 URL을 입력하세요." />
+              </div>
+              <div class="form-group">
+                <label>&nbsp;</label>
+                <label class="file-label">
+                  이미지 업로드
+                  <input type="file" id="f-file" accept="image/*" />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label>취미 <span class="req">*</span></label>
+              <input type="text" id="f-hobby" placeholder="취미를 입력하세요 (예: 게임, 영화 감상, 여행)" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group grow">
+                <label>관심분야 <span class="req">*</span></label>
+                <input type="text" id="f-interest" placeholder="예: Front-End, AI, 디자인" required />
+              </div>
+              <div class="form-group grow">
+                <label>장래희망</label>
+                <input type="text" id="f-job" placeholder="장래희망을 입력하세요" />
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label>능력치 (Skills) <span class="req">*</span></label>
+              <div id="skillsContainer"></div>
+              <button type="button" id="addSkillBtn" class="btn-add-skill">+ 스킬 추가</button>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-register">등록</button>
+              <button type="button" id="cancelBtn" class="btn-cancel-modal">취소</button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- 실시간 미리보기 -->
+        <div class="modal-preview-col">
+          <p class="preview-label">미리보기</p>
+          <div class="card preview-card" id="previewCard">
+            <div class="card-img-area">
+              <img id="pv-img" src="" alt="" style="display:none" />
+              <div class="card-img-empty" id="pv-empty"></div>
+            </div>
+            <div class="card-body">
+              <p class="card-line"><span class="lbl">이름:</span> <span id="pv-name">???</span> (<span id="pv-nick">???</span>)</p>
+              <p class="card-line"><span class="lbl">취미:</span> <span id="pv-hobby">???</span></p>
+              <p class="card-line"><span class="lbl">관심분야:</span> <span id="pv-interest">???</span></p>
+              <p class="card-line"><span class="lbl">장래희망:</span> <span id="pv-job">???</span></p>
+              <div class="card-skills" id="pv-skills"></div>
+            </div>
+            <button class="card-music" id="pv-music">&#9835; ???의 플레이리스트</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
