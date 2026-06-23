@@ -1,6 +1,8 @@
 # 후위얼.zip 프로젝트 계획서
 
 # Who We are ZIP
+<img width="1440" height="4400" alt="WHOWEARE_Frame" src="https://github.com/user-attachments/assets/175f6031-8a82-49fa-8a53-ff89fd7e438f" />
+
 <hr>
 
 | 이름 | 역할(Role) | 담당 기능 및 작업 내용 | GitHub 프로필 |
